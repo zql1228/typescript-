@@ -1,0 +1,57 @@
+@bg_color:#b7d4a8;
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#main{
+    width: 360px;
+    height: 420px;
+    background-color: @bg_color;
+    border:10px solid #000;
+    border-radius: 40px;
+    margin:100px auto;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    #stage{
+        width: 304px;
+        height: 304px;
+        border:1px solid #000; 
+        position: relative;
+        //蛇
+        #snake{      
+            &>div{
+                width:10px;
+                height: 10px;
+                background: #000;
+                border:1px solid @bg_color;
+                position: absolute;
+            }
+        }    
+        //食物
+        #food{           
+            left: 40px;
+            right:100px;  
+            width: 10px;  
+            height: 10px;       
+            position: absolute;
+            display: flex;
+            flex-flow:row wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            &>div{
+                width:4px;
+                height: 4px;
+                background: #000;
+                transform: rotate(45deg);
+            }
+        }  
+    }
+    #stage-panel{
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+    }   
+}

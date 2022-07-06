@@ -11,9 +11,9 @@ output:{
     path:path.resolve(__dirname,'dist'),//指定打包后的目录
     filename:"bundle.js",//打包后文件的名字 
     //告诉 webpack不适用箭头
-    environment:{
-        arrowFunction:false
-    } 
+    // environment:{
+    //     arrowFunction:false
+    // } 
 },
 //指定webpack打包时要使用的模块
 module:{
@@ -53,6 +53,22 @@ module:{
         use:[
             "style-loader",
             "css-loader",
+            //引入post-css
+            {
+                loader:"postcss-loader",
+                options:{
+                    postcssOptions:{
+                        plugins:[
+                            [
+                                "postcss-preset-env",
+                                {
+                                    browers:'last 2 versions'
+                                }
+                            ]
+                        ]
+                    }
+                }
+            },
             "less-loader"
         ]
     }
