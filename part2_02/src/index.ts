@@ -4,7 +4,7 @@ class Food{
     //定义一个属性表示食物所对应的元素
     element:HTMLElement;
     constructor(){
-        this.element=document.getElementById('food')
+        this.element=document.getElementById('food')!
     }
     //定义获取食物x轴的坐标方法
     get x(){
@@ -33,8 +33,8 @@ class ScorePanel{
     //设置变量限制等级
     maxLevel:number;
     constructor(maxLevel:number=10){
-        this.scoreEle=document.getElementById('score')?
-        this.levelEle=document.getElementById('level')?
+        this.scoreEle=document.getElementById('score')!
+        this.levelEle=document.getElementById('level')!
         this.maxLevel=maxLevel
     }
     addScore(){//分数自增
