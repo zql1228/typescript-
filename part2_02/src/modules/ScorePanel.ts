@@ -15,8 +15,9 @@ class ScorePanel{
         this.upScore=upScore
     }
     addScore(){//分数自增
+        this.scoreEle.innerHTML=++this.score+''
         if(this.score%this.upScore===0){
-            this.scoreEle.innerHTML=++this.score+''
+            this.levelUP()
         }
         
 

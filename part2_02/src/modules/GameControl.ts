@@ -17,13 +17,10 @@ class GameControl{
     //游戏初始化
     init(){
         //绑定键盘事件
-        console.log('init')
         document.addEventListener('keydown',this.keydownHandler.bind(this))
         this.run()
     }
     keydownHandler(event:KeyboardEvent){
-        console.log('keydownHandler')
-        console.log(event.key)
         // if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)){
             this.direction=event.key
         // }
@@ -35,7 +32,6 @@ class GameControl{
         // switch(this.direction)
         let x=this.snake.X
         let y=this.snake.Y
-        console.log(x,y)
         //根据按键方向修改x,y值，
         switch(this.direction){
             case "ArrowUp":
@@ -64,6 +60,7 @@ class GameControl{
         }
       
         //开启一个定时调用
+        clearTimeout()
         this.isLive&&setTimeout(this.run.bind(this),300-(this.scorePanel.level-1)*30)
         
     }
